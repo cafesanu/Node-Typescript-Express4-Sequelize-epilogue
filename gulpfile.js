@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({lazy: true}), // eslint-disable-line id-length
-    requireDir = require('require-dir');
+    requireDir = require('require-dir'),
+    typings = require('typings');
 
 requireDir('./gulp-tasks');
 
@@ -19,7 +20,7 @@ gulp.task('serve', ['ts'], function() {
     });
 });
 
-gulp.task('ts', ['tsd'], function() {
+gulp.task('ts', ['typings'], function() {
     var tsProject = $.typescript.createProject('tsconfig.json');
 
     return gulp.src('app/**/*.ts')
@@ -27,14 +28,21 @@ gulp.task('ts', ['tsd'], function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('tsd', function(done) {
-    return $.tsd({
-        command: 'reinstall',
-        config: './tsd.json'
-    }, done);
-});
-
 gulp.task('watch-ts', ['ts'], function() {
     gulp.watch('app/src/main/**/*.ts', ['ts']);
+});
+
+gulp.task('typings', function(done) {
+    var options = {
+        save: false,
+        saveDev: false,
+        ambient: false,
+        cwd: __dirname,
+        production: false
+    };
+
+    typings.install(options).then(function() {
+        done();
+    });
 });
 

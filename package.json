@@ -30,9 +30,12 @@
     "underscore.string": "^3.2.2"
   },
   "devDependencies": {
+    "gulp-shell": "^0.5.1",
     "gulp-tsd": "^0.1.0",
     "gulp-typescript": "^2.10.0",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "typings": "^0.6.1",
+    "underscore.string": "^3.2.3"
   },
   "scripts": {
     "test": "istanbul cover --include-all-sources jasmine-node app/test"

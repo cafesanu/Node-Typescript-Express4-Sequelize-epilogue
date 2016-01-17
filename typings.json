@@ -1,0 +1,14 @@
+{
+  "ambientDependencies": {
+    "bluebird": "github:DefinitelyTyped/DefinitelyTyped/bluebird/bluebird.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "body-parser": "github:DefinitelyTyped/DefinitelyTyped/body-parser/body-parser.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#d2dd0dbfc70f5bd50aab635156620b3a2578a48d",
+    "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "mime": "github:DefinitelyTyped/DefinitelyTyped/mime/mime.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "sequelize": "github:DefinitelyTyped/DefinitelyTyped/sequelize/sequelize.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "serve-static": "github:DefinitelyTyped/DefinitelyTyped/serve-static/serve-static.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "validator": "github:DefinitelyTyped/DefinitelyTyped/validator/validator.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3"
+  }
+}

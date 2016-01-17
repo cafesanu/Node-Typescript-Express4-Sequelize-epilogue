@@ -7,7 +7,7 @@ Generated with
 - [Node.js](https://nodejs.org) 5.3.0
 - [npm](https://www.npmjs.com) 3.3.12
 - [Express](http://expressjs.com) 4.13.3
-- [tsd](http://definitelytyped.org/tsd/) 0.6.5
+- [typings](https://github.com/typings/typings) 0.6.5
 - [gulp](http://gulpjs.com/) 3.9.0
 - [Sequelize](http://docs.sequelizejs.com/en/latest/) 3.13.0
 - [epiloge](https://github.com/dchester/epilogue/) 0.6.5
@@ -21,7 +21,7 @@ How to run
 ```
 npm install -g gulp
 npm install -g typescript
-npm install -g tsd
+npm install -g typings
 npm install
 gulp serve
 ```

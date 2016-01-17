@@ -6,6 +6,7 @@ export function modelsRouter(app: express.Express, models, epilogue) {
     _.forEach(models, (model, modelName: string) => {
         var fileName: string,
             resource: any,
+            router,
             route;
 
         if (!_.includes(['sequelize', 'Sequelize'], modelName)) {
