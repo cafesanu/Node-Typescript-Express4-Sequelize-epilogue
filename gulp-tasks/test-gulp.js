@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({lazy: true}); // eslint-disable-line id-length
 
 gulp.task('pre-test-coverage', ['clean-coverage', 'ts'], function() {
-    return gulp.src(['build/src/main/**/*.js'])
+    return gulp.src(['build/main/**/*.js'])
         // Covering files
         .pipe($.istanbul())
         // Force `require` to return covered files
@@ -10,10 +10,11 @@ gulp.task('pre-test-coverage', ['clean-coverage', 'ts'], function() {
 });
 
 gulp.task('test-coverage', ['pre-test-coverage'], function() {
-    return gulp.src(['build/src/test/**/*.js'])
-        .pipe($.jasmine())
+    return gulp.src(['build/test/**/*-spec.js'])
         .pipe($.plumber(function() {
+            process.exit(1);
         }))
+        .pipe($.jasmine())
         .pipe($.istanbul.writeReports({
             dir: './build/coverage'
         }))
@@ -39,7 +40,7 @@ gulp.task('integration-test', ['ts'], function() {
         .pipe($.jasmine());
 });
 
-gulp.task('integration-test-ci', ['unit-test'], function() {
+gulp.task('integration-test-ci', ['test-coverage'], function() {
     $.env({
         vars: {
             NODE_ENV: 'ci'

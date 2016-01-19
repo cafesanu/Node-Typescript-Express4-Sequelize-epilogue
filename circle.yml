@@ -4,6 +4,7 @@ machine:
 test:
   override:
     - ./node_modules/.bin/gulp integration-test-ci
+    - cp -rf ./build/coverage $CIRCLE_ARTIFACTS
 dependencies:
   pre:
     - mysql -u ubuntu -e 'create database IF NOT EXISTS circle_test'
