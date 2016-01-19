@@ -24,8 +24,8 @@ gulp.task('test-coverage', ['pre-test-coverage'], function() {
         }));
 });
 
-gulp.task('unit-test', function() {
-    return gulp.src(['build/src/test/**/*-spec.js'])
+gulp.task('unit-test', ['ts'], function() {
+    return gulp.src(['build/test/**/*-spec.js'])
         .pipe($.jasmine());
 });
 

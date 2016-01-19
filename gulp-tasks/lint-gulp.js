@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     stylish = require('tslint-stylish'),
     $ = require('gulp-load-plugins')({lazy: true}); // eslint-disable-line id-length
 
-gulp.task('lint', ['ts'], function() {
+gulp.task('lint', ['unit-test'], function() {
     return gulp.src(['app/src/main/**/*.ts'])
         .pipe($.plumber())
         .pipe($.tslint())
