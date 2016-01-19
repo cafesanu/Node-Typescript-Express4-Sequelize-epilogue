@@ -21,11 +21,20 @@ gulp.task('serve', ['ts'], function() {
 });
 
 gulp.task('ts', ['typings'], function() {
-    var tsProject = $.typescript.createProject('tsconfig.json');
+    var tsProject = $.typescript.createProject('tsconfig.json'),
+        fail = false;
 
     return gulp.src('app/**/*.ts')
-        .pipe($.typescript(tsProject))
-        .pipe(gulp.dest('build'));
+        .pipe($.plumber(function() {
+            fail = true;
+        }))
+        .pipe($.typescript(tsProject, undefined, $.typescript.reporter.longReporter())) // eslint-disable-line no-undefined
+        .pipe(gulp.dest('build'))
+        .on('end', function() {
+            if (fail) {
+                process.exit(1);
+            }
+        });
 });
 
 gulp.task('typings', function(done) {
@@ -41,4 +50,6 @@ gulp.task('typings', function(done) {
         done();
     });
 });
+
+gulp.task('ci', ['lint']);
 

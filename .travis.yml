@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- 5.3
+sudo: false
+before_install:
+- export TZ=US/Eastern
+- npm install -g gulp-cli
+- npm install -g npm@3.3.12
+
+notifications:
+  email:
+  - noc@honestbuildings.com
+branches:
+  except:
+  - master
+script:
+  - gulp ci

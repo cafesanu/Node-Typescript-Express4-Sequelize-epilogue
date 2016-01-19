@@ -5,7 +5,7 @@ import * as winston from 'winston';
 import * as bodyParser from 'body-parser';
 import * as models from './models';
 import * as router from './routes';
-import * as epilogue from 'epilogue';
+let epilogue = require('epilogue');
 
 const app: express.Express = express();
 const port: number = process.env.PORT || 3000;
