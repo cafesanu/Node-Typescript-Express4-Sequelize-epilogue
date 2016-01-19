@@ -28,10 +28,6 @@ gulp.task('ts', ['typings'], function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('watch-ts', ['ts'], function() {
-    gulp.watch('app/src/main/**/*.ts', ['ts']);
-});
-
 gulp.task('typings', function(done) {
     var options = {
         save: false,

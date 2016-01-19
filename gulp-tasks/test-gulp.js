@@ -1,21 +1,21 @@
 var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')({lazy: true});
+    $ = require('gulp-load-plugins')({lazy: true}); // eslint-disable-line id-length
 
-gulp.task('pre-istambul-test', ['clean-coverage'], function() {
-    return gulp.src(['app/src/main/**/*.js'])
+gulp.task('pre-test-coverage', ['clean-coverage', 'ts'], function() {
+    return gulp.src(['build/src/main/**/*.js'])
         // Covering files
         .pipe($.istanbul())
         // Force `require` to return covered files
         .pipe($.istanbul.hookRequire());
 });
 
-gulp.task('test-istambul', ['pre-istambul-test'], function() {
-    return gulp.src(['app/src/test/**/*.js'])
+gulp.task('test-coverage', ['pre-test-coverage'], function() {
+    return gulp.src(['build/src/test/**/*.js'])
         .pipe($.jasmine())
         .pipe($.plumber(function() {
         }))
         .pipe($.istanbul.writeReports({
-            dir: './app/src/coverage'
+            dir: './build/coverage'
         }))
         .pipe($.istanbul.enforceThresholds({
             thresholds: {
@@ -25,22 +25,23 @@ gulp.task('test-istambul', ['pre-istambul-test'], function() {
 });
 
 gulp.task('unit-test', function() {
-    return gulp.src(['app/src/test/**/*.js'])
+    return gulp.src(['build/src/test/**/*-spec.js'])
         .pipe($.jasmine());
 });
 
 gulp.task('integration-test', function() {
-    $.env = {
+    $.env({ // eslint-disable-line id-length
         vars: {
             NODE_ENV: 'test'
         }
-    };
-    return gulp.src(['app/src/integration/**/*.js'])
+    });
+    return gulp.src(['build/src/integration/**/*-spec.js'])
         .pipe($.jasmine());
+        // .pipe($.exit());
 });
 
 gulp.task('unit-test-watch', function() {
-    gulp.watch('app/src/**/*.js', ['unit-test']);
+    gulp.watch('build/src/**/*.js', ['unit-test']);
 });
 
 gulp.task('test', ['unit-test', 'integration-test']);
