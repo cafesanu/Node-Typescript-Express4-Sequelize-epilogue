@@ -1,16 +1,26 @@
 import * as request from 'supertest';
+import * as winston from 'winston';
 import allModels = require('../../main/models');
 import app = require('../../main/app');
 import httpStatusCodes = require('../../main/constants/http-codes-const');
 
 let agent = request.agent(app),
-    bookStr = 'Book',
+    orm,
+    Book,
+    bookId;
+
+if (process.env.NODE_ENV === 'test') {
     orm = allModels.modelCollector('hb_test', 'root', 'root', {
         host: 'virtualbox',
         dialect: 'mysql'
-    }),
-    Book = orm[bookStr],
-    bookId;
+    });
+} else if (process.env.NODE_ENV === 'ci') {
+    winston.log('info', 'At CI');
+    orm = allModels.modelCollector('circle_test', 'ubuntu', null, {
+        dialect: 'mysql'
+    });
+}
+Book = orm.Book;
 
 describe('Book Crud test', () => {
     it('Should allow a book to be poster and return a read and _id', (done) => {

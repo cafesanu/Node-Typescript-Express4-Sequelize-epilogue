@@ -20,10 +20,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // Setting up our singleton...
+winston.log('info', 'Environment: ' + process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'test') {
     allModels = models.modelCollector('hb_test', 'root', 'root', {
         dialect: 'mysql',
         host: 'virtualbox'
+    });
+} else if (process.env.NODE_ENV === 'ci') {
+    winston.log('info', 'at CI');
+    allModels = models.modelCollector('circle_test', 'ubuntu', '', {
+        dialect: 'mysql'
     });
 } else if (process.env.NODE_ENV === 'development') {
     allModels = models.modelCollector('hb', 'root', 'root', {

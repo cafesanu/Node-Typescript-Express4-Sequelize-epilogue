@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `book` (
+CREATE TABLE IF NOT EXISTS `Book` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `author` varchar(20) COLLATE utf8_unicode_ci NOT NULL,

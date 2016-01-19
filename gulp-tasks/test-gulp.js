@@ -29,15 +29,24 @@ gulp.task('unit-test', ['ts'], function() {
         .pipe($.jasmine());
 });
 
-gulp.task('integration-test', function() {
-    $.env({ // eslint-disable-line id-length
+gulp.task('integration-test', ['ts'], function() {
+    $.env({
         vars: {
             NODE_ENV: 'test'
         }
     });
-    return gulp.src(['build/src/integration/**/*-spec.js'])
+    return gulp.src(['build/integration/**/*-spec.js'])
         .pipe($.jasmine());
-        // .pipe($.exit());
+});
+
+gulp.task('integration-test-ci', ['unit-test'], function() {
+    $.env({
+        vars: {
+            NODE_ENV: 'ci'
+        }
+    });
+    return gulp.src(['build/integration/**/*-spec.js'])
+        .pipe($.jasmine());
 });
 
 gulp.task('unit-test-watch', function() {
