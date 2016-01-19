@@ -1,6 +1,7 @@
 # Node.js application build with Express 4, Typescript 1.7.5, Sequelize ORM(MySQL ORM), and epiloge (for automatic REST endpoints)
+[![Continuous Integration at circleCi.com](https://circleci.com/gh/cafesanu/Node-Typescript-Express4-Sequelize-epilogue.svg?style=shield&circle-token=:circle-token "Continuous Integration at circleCi.com")](https://circleci.com/gh/cafesanu/Node-Typescript-Express4-Sequelize-epilogue)
 
-Sample Node.js application build with Express 4.x, [TypeScript](http://www.typescriptlang.org) 1.7.x, Sequelize ORM(MySQL ORM), and epiloge (for automatic REST endpoints)
+Node.js application with unit test and integration test build with Express 4.x, [TypeScript](http://www.typescriptlang.org) 1.7.x, Sequelize ORM(MySQL ORM), and epiloge (for automatic REST endpoints)
 
 Generated with
 --------------
