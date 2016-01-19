@@ -9,6 +9,10 @@
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
     "sequelize": "github:DefinitelyTyped/DefinitelyTyped/sequelize/sequelize.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
     "serve-static": "github:DefinitelyTyped/DefinitelyTyped/serve-static/serve-static.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
-    "validator": "github:DefinitelyTyped/DefinitelyTyped/validator/validator.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3"
+    "superagent": "github:DefinitelyTyped/DefinitelyTyped/superagent/superagent.d.ts#b30dbc4dd32b3237cd78e9139c3fc270caaacacb",
+    "supertest": "github:DefinitelyTyped/DefinitelyTyped/supertest/supertest.d.ts#15852a714521bb27a8b4e129c7f48e7e1046cfdb",
+    "underscore.string": "github:DefinitelyTyped/DefinitelyTyped/underscore.string/underscore.string.d.ts#66a3ac01bd1493f438a134c77e8e2f33951500c5",
+    "validator": "github:DefinitelyTyped/DefinitelyTyped/validator/validator.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "winston": "github:DefinitelyTyped/DefinitelyTyped/winston/winston.d.ts#59637e7da6dad1d7a6361efc4373459868d1ffb8"
   }
 }

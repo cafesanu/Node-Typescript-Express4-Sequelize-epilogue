@@ -24,7 +24,7 @@ gulp.task('ts', ['typings'], function() {
     var tsProject = $.typescript.createProject('tsconfig.json'),
         fail = false;
 
-    return gulp.src('app/**/*.ts')
+    return gulp.src('app/src/**/*.ts')
         .pipe($.plumber(function() {
             fail = true;
         }))
