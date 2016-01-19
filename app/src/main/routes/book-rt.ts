@@ -1,12 +1,11 @@
 import {Router} from 'express';
-import * as _ from 'lodash';
 
-function routes(Book, resource: any) {
-    var bookRouter: Router = Router(),
+function routes(Book, resource) {
+    let bookRouter: Router = Router(),
         bookCtrl = require('../controllers/book-ctrl')(Book, resource);
 
-    bookRouter.route('/:id/sayHi')
-        .get(bookCtrl.sayHi);
+    bookRouter.route('/:id/customEndpoint')
+        .get(bookCtrl.customEndpoint);
 
     return bookRouter;
 }

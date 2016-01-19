@@ -1,16 +1,16 @@
-function model(sequelize, DataTypes) {
-    var Book = sequelize.define('Book', {
+function model(sequelize, dataTypes) {
+    let Book = sequelize.define('Book', {
         title: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         author: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         genre: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         read: {
-            type: DataTypes.BOOLEAN,
+            type: dataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
         }

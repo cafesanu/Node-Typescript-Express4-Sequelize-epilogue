@@ -30,12 +30,18 @@
     "underscore.string": "^3.2.2"
   },
   "devDependencies": {
+    "gulp-exit": "0.0.2",
     "gulp-shell": "^0.5.1",
     "gulp-tsd": "^0.1.0",
+    "gulp-tslint": "^4.3.1",
     "gulp-typescript": "^2.10.0",
     "gulp-util": "^3.0.7",
+    "tslint": "^3.2.2",
+    "tslint-eslint-rules": "^1.0.1",
+    "tslint-stylish": "^2.1.0-beta",
     "typings": "^0.6.1",
-    "underscore.string": "^3.2.3"
+    "underscore.string": "^3.2.3",
+    "winston": "^2.1.1"
   },
   "scripts": {
     "test": "istanbul cover --include-all-sources jasmine-node app/test"

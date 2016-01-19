@@ -4,8 +4,8 @@ import * as express from 'express';
 
 export function modelsRouter(app: express.Express, models, epilogue) {
     _.forEach(models, (model, modelName: string) => {
-        var fileName: string,
-            resource: any,
+        let fileName: string,
+            resource,
             router,
             route;
 

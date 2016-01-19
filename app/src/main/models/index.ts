@@ -2,10 +2,10 @@ import * as fs from 'fs';
 import {join} from 'path';
 import * as _ from 'lodash';
 
-var db = {};
+let db = {};
 
 export function modelCollector(database: string, username: string, password: string, obj: Object) {
-    var Sequelize = require('sequelize'),
+    let Sequelize = require('sequelize'),
         sequelize = new Sequelize(database, username, password, obj);
 
     fs
@@ -14,7 +14,7 @@ export function modelCollector(database: string, username: string, password: str
             return (file.indexOf('.') !== 0) && (file !== 'index.js');
         })
         .forEach(function(file) {
-            var model = sequelize.import(join(__dirname, file));
+            let model = sequelize.import(join(__dirname, file));
 
             db[model.name] = model;
         });
